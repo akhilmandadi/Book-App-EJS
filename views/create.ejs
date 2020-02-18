@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.377);
+    }
+
+    label {
+        display: inline-block;
+        width: 150px;
+        text-align: left;
+    }
+
+    input {
+        padding: 20px;
+        width: 180px;
+        height: 9px;
+        border: 1.5px solid rgb(9, 3, 12);
+        border-radius: 14px 51px 31px;
+    }
+
+    input:focus {
+        padding: 20px;
+        width: 180px;
+        height: 9px;
+        border: 1.5px solid rgb(9, 3, 12);
+        border-radius: 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h3>Book Store App</h3>
+        <ul class="nav nav-pills">
+            <li><a href="/home">List All Books</a></li>
+            <li><a href="/delete">Delete a Book</a></li class="active">
+            <li class="active"><a href="/create">Create a Book</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h3>Create Book</h3>
+        <hr>
+        <div class="container" style="text-align: center;">
+            <form action="http://127.0.0.1:3000/create" method="post" id="Create">
+                <br />
+                <label>Enter Book Id: </label>
+                <input type="number" class="ip4" name="bookId" id="bookId" placeholder="Book Id" required
+                    autofocus /><br /><br />
+                <label>Enter Book Title: </label>
+                <input type="text" name="title" id="title" placeholder="Title" title="Should be more than 5 characters"
+                    pattern=".{5,}" required /><br /><br />
+                <label>Enter Book Author: </label>
+                <input type="text" name="author" id="author" placeholder="Author" pattern=".{5,}"
+                    title="Should be more than 5 characters" required /><br /><br />
+                <button type="submit" class="btn btn-success btn-lg" style="width: 120px;" name="create">Create</button>
+                <br /><br />
+                <p style="color: red; text-align: center;font-style: oblique;font-weight: bold;"><%= error %></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
